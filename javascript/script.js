@@ -18,3 +18,23 @@ sydneyTimeElement.innerHTML = sydneyTime.format("h:mm:ss [<small>]A[</small>]");
 
 updateTime();
 setInterval(updateTime, 1000);
+
+function updateCity(event) {
+    let cityTimeZone = event.target.value;
+    let cityTime = moment().tz(cityTimeZone);
+    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+    let cityElement = document.querySelector("#city")
+    cityElement.innerHTML = `
+            <div class="cities">
+                <div>
+                    <h2>${cityName}</h2>
+                    <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+                </div>
+                <div class="time">${cityTime.format(
+                  "h:mm:ss"
+                )}<small>${cityTime.format("A")}</small></div>
+            </div>`;
+}
+
+let citySelectElement = document.querySelector("#city-select")
+citySelectElement.addEventListener("change", updateCity)

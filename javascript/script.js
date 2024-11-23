@@ -36,7 +36,9 @@ function updateCity(event) {
                 <div class="time">${cityTime.format(
                   "h:mm:ss"
                 )}<small>${cityTime.format("A")}</small></div>
-            </div>`;
+            </div>
+            <div class="allCitiesLink"><a href="https://cynthia-worldclock.netlify.app/">More Cities</a></div?
+            `;
 }
 
 let citySelectElement = document.querySelector("#city-select")

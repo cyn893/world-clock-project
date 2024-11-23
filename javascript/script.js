@@ -14,6 +14,13 @@ let sydneyTime = moment().tz("Australia/Sydney")
 sydneyElement.innerHTML = sydneyTime.format("MMMM D YYYY");
 sydneyTimeElement.innerHTML = sydneyTime.format("h:mm:ss [<small>]A[</small>]");
 
+let taiwanElement = document.querySelector("#taiwan .date")
+let taiwanTimeElement = document.querySelector("#taiwan .time")
+let taiwanTime = moment().tz("Asia/Taipei");
+
+taiwanElement.innerHTML = taiwanTime.format("MMMM D YYYY");
+taiwanTimeElement.innerHTML = taiwanTime.format("h:mm:ss [<small>]A[</small>]");
+
 }
 
 updateTime();
@@ -37,7 +44,7 @@ function updateCity(event) {
                   "h:mm:ss"
                 )}<small>${cityTime.format("A")}</small></div>
             </div>
-            <div class="allCitiesLink"><a href="https://cynthia-worldclock.netlify.app/">More Cities</a></div?
+            <div class="allCitiesLink"><a href="https://cynthia-worldclock.netlify.app/">More Cities</a></div>
             `;
 }
 
